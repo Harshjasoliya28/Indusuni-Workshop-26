@@ -1,0 +1,41 @@
+<html>
+<script>
+    function arith(o) {
+        var a = myfrm.txt1.value
+        var b = myfrm.txt2.value
+        var c ;
+        if(o=='+'){
+            c=parseInt(a)+parseInt(b);
+             myfrm.ans.value = "Addition is  " + c
+        } else if(o=='-'){      
+            c=parseInt(a)-parseInt(b);
+             myfrm.ans.value = "Subtraction is  " + c
+        } else if(o=='*'){
+            c=parseInt(a)*parseInt(b);
+             myfrm.ans.value = "Multiplication is " + c
+        } else if(o=='/'){
+            c=parseInt(a)/parseInt(b);
+             myfrm.ans.value = "Division is " + c
+        }
+    
+
+    }
+     
+</script>
+<body>
+    <form id="myfrm">
+        No1 : <input type="text" name="txt1" /> <br />
+        No2 : <input type="text" name="txt2" /> <br />
+        choice : <select name="txt3">
+            <option>+</option>
+            <option>-</option>
+            <option>*</option>
+            <option>/</option>
+        </select> <br />
+        <input type="button" onclick="arith(myfrm.txt3.value)" value="Get Answer" />
+        
+      <br>  <input type="text" name="ans" readonly disabled /></br>
+    </form>
+</body>
+
+</html>
