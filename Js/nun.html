@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GST Calculator</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        input, select, button {
+            padding: 8px;
+            margin: 10px;
+        }
+
+        #result {
+            font-size: 25px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>GST Calculator</h1>
+
+    <label>Enter Amount (in INR): </label>
+    <input type="text" id="amount" value="10000">
+    <br>
+
+    <label>Select GST Rate: </label>
+    <select id="gstRate">
+        <option value="5">5%</option>
+        <option value="12">12%</option>
+        <option value="18" selected>18%</option>
+        <option value="28">28%</option>
+    </select>
+    <br>
+
+    <button onclick="calculateGST()">Calculate GST</button>
+
+    <div id="result"></div>
+
+    <script>
+        function calculateGST() {
+
+            // Get amount and GST rate using DOM
+            var amount = parseFloat(document.getElementById("amount").value);
+            var gstRate = parseFloat(document.getElementById("gstRate").value);
+
+            // Calculate GST and Total
+            var gstAmount = (amount * gstRate) / 100;
+            var total = amount + gstAmount;
+
+            // Display result using DOM
+            document.getElementById("result").innerHTML =
+                "Amount: ₹ " + amount.toFixed(2) + "<br>" +
+                "GST (" + gstRate + "%): ₹ " + gstAmount.toFixed(2) + "<br>" +
+                "Total: ₹ " + total.toFixed(2);
+        }
+    </script>
+
+</body>
+</html>

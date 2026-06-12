@@ -1,0 +1,41 @@
+<html>
+<script>
+    function doSum() {
+        var a = myfrm.txt1.value
+        var b = myfrm.txt2.value
+        var c = parseInt(a) + parseInt(b)
+        myfrm.ans.value = "Sum is " + c
+    }
+    function doSub() {
+        var a = myfrm.txt1.value
+        var b = myfrm.txt2.value
+        var c = parseInt(a) - parseInt(b)
+         myfrm.ans.value = "Sub is " + c
+    }
+    function doMul() {
+        var a = myfrm.txt1.value
+        var b = myfrm.txt2.value
+        var c = parseInt(a) * parseInt(b)
+         myfrm.ans.value = "Mul is " + c
+    }
+    function doDiv() {
+        var a = myfrm.txt1.value
+        var b = myfrm.txt2.value
+        var c = parseInt(a) / parseInt(b)
+         myfrm.ans.value = "Div is " + c
+    }
+</script>
+
+<body>
+    <form id="myfrm">
+        No1 : <input type="text" name="txt1" /> <br />
+        No2 : <input type="text" name="txt2" /> <br />
+        <input type="button" onclick="doSum()" value="Sum" />
+        <input type="button" onclick="doSub()" value="Subtract" />
+        <input type="button" onclick="doMul()" value="Multiply" />
+        <input type="button" onclick="doDiv()" value="Divide" />
+        <input type="text" name="ans" readonly disabled />
+    </form>
+</body>
+
+</html>
